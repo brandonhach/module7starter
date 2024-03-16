@@ -11,7 +11,7 @@ const app = express();
 //configure app
 let port = 3000;
 let host = 'localhost';
-let url = 'monogdb://localhost:27017/demos';
+let url = 'mongodb://127.0.0.1:27017';
 app.set('view engine', 'ejs');
 
 //connect to MongoDB
@@ -49,9 +49,4 @@ app.use((err, req, res, next) => {
 
 	res.status(err.status);
 	res.render('error', { error: err });
-});
-
-//start the server
-app.listen(port, host, () => {
-	console.log('Server is running on port', port);
 });

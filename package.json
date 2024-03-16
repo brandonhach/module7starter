@@ -1,0 +1,20 @@
+{
+	"name": "module7starter",
+	"version": "1.0.0",
+	"description": "Integrate mongodb db using mongoose",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Brandon Hach",
+	"license": "ISC",
+	"dependencies": {
+		"ejs": "^3.1.9",
+		"express": "^4.18.3",
+		"luxon": "^3.4.4",
+		"method-override": "^3.0.0",
+		"mongoose": "^8.2.2",
+		"morgan": "^1.10.0",
+		"uuid": "^9.0.1"
+	}
+}

@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const storyRoutes = require('./routes/storyRoutes');
+const mongoose = require('mongoose');
 
 //create app
 const app = express();
@@ -10,7 +11,15 @@ const app = express();
 //configure app
 let port = 3000;
 let host = 'localhost';
+let url = 'monogdb://localhost:27017/demos';
 app.set('view engine', 'ejs');
+
+//connect to MongoDB
+mongoose.connect(url).then(() => {
+	app.listen(port, host, () => {
+		console.log('Server is running on port', port);
+	});
+});
 
 //mount middlware
 app.use(express.static('public'));
